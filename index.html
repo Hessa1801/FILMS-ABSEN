@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Absen FILM</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-top: 10px;
+            color: #555;
+        }
+        input {
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>ABSEN FILM</h2>
+        <form action="#" method="POST" onsubmit="submitAbsensi(event)">
+            <label for="nama">Nama:</label>
+            <input type="text" id="nama" name="nama" required>
+
+            <label for="NIS_Murid">NIS Murid:</label>
+            <input type="text" id="NIS_Murid" name="NIS_Murid" required>
+
+            <label for="tanggal">Tanggal Kehadiran:</label>
+            <input type="date" id="tanggal" name="tanggal" required>
+
+            <label for="waktu">Waktu Kehadiran:</label>
+            <input type="time" id="waktu" name="waktu" required>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        function submitAbsensi(event) {
+            event.preventDefault();
+            const nama = document.getElementById('nama').value;
+            const nisMurid = document.getElementById('NIS_Murid').value;
+            const tanggal = document.getElementById('tanggal').value;
+            const waktu = document.getElementById('waktu').value;
+
+            // Menampilkan data absensi di konsol (sebagai contoh)
+            console.log(`Nama: ${nama}`);
+            console.log(` Murid: ${nisMurid}`);
+            console.log(`Tanggal Kehadiran: ${tanggal}`);
+            console.log(`Waktu Kehadiran: ${waktu}`);
+
+            alert("Absensi berhasil disimpan!");
+
+            // Reset form setelah submit
+            document.querySelector('form').reset();
+        }
+    </script>
+</body>
+</html>
